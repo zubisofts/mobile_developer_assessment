@@ -38,15 +38,21 @@ class _AppButtonState extends State<AppButton> {
           decoration: BoxDecoration(
             color: widget.isActive
                 ? widget.isPrimary
-                    ? Theme.of(context).primaryColor
-                    : themeData.backgroundColor
+                    ? themeData.colorScheme.primary
+                    : themeData.colorScheme.background
                 : Colors.grey,
             borderRadius: BorderRadius.circular(6),
           ),
           alignment: Alignment.center,
           child: Text(
             widget.isLoading ? 'processing...' : widget.buttonText,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: themeData.textTheme.bodyLarge?.copyWith(
+              color: widget.isActive
+                  ? widget.isPrimary
+                      ? themeData.colorScheme.onPrimary
+                      : themeData.colorScheme.onBackground
+                  : Colors.white,
+            ),
           ),
         ),
       ),

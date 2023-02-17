@@ -1,30 +1,28 @@
-class Validators{
+class Validators {
   Validators._();
 
-  static String email(String? str){
+  static String email(String? str) {
     Pattern pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regex = RegExp(pattern.toString());
 
-    if(str == null){
+    if (str == null) {
       return 'This field is required';
-    }
-    else{
+    } else {
       if (str.isEmpty) return 'This field is required';
       if (!regex.hasMatch(str)) return 'Email format is invalid';
       return '';
     }
   }
 
-  static String phone(String? str){
+  static String phone(String? str) {
     Pattern pattern =
         r'^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d+)\)?)[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?)+)(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$';
     RegExp regex = RegExp(pattern.toString());
 
-    if(str == null){
+    if (str == null) {
       return 'This field is required';
-    }
-    else{
+    } else {
       if (str.isEmpty) return 'This field is required';
       if (str.length < 11) {
         return 'Phone number must be at least 11';
@@ -34,11 +32,10 @@ class Validators{
     }
   }
 
-  static String password(String? value){
-    if(value == null){
+  static String password(String? value) {
+    if (value == null) {
       return 'Password is required';
-    }
-    else{
+    } else {
       if (value.isEmpty) {
         return 'Password is required';
       }
@@ -49,18 +46,17 @@ class Validators{
     }
   }
 
-  static String nin(String? value){
+  static String nin(String? value) {
     if (value!.length < 11) {
       return 'NIN must be 11 characters';
     }
     return '';
   }
 
-  static String bvn(String? value){
-    if(value == null){
+  static String bvn(String? value) {
+    if (value == null) {
       return 'This field is required';
-    }
-    else{
+    } else {
       if (value.isEmpty) {
         return 'This field is required';
       }
@@ -71,11 +67,10 @@ class Validators{
     }
   }
 
-  static String text(String? value){
-    if(value == null){
+  static String text(String? value) {
+    if (value == null) {
       return 'This field is required';
-    }
-    else{
+    } else {
       if (value.isEmpty) {
         return 'This field is required';
       }
