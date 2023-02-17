@@ -49,7 +49,7 @@ void main() async {
     blocTest("Call on FetchEmployees event returns [Loading, EmployeesFetched]",
         build: () {
           when(
-            () => employeeRepo.getEmployees(fakeError: false),
+            () => employeeRepo.getEmployees(),
           ).thenAnswer(
               (_) => Future.value(StatusResponse(success: true, data: [])));
           return employeeCubit;
@@ -60,16 +60,16 @@ void main() async {
         expect: () => [Loading(), const EmployeesFetched(employees: [])]);
 
     blocTest("Call on Fetch Employees event returns [Loading, Error]",
-        build: () {
+         build: () {
           when(
             () => employeeRepo.getEmployees(),
-          ).thenAnswer((_) => Future.value(StatusResponse(
-              success: false, errors: [const CustomError(message: "error")])));
+          ).thenAnswer(
+              (_) => Future.value(StatusResponse(success: false, data: [])));
           return employeeCubit;
         },
         act: (EmployeeCubit cubit) {
           return cubit.fetchEmployees();
         },
-        expect: () => [isA<Loading>(), isA<Error>()]);
+        expect: () => [Loading(), isA<Error>()]);
   });
 }

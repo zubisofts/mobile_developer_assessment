@@ -7,7 +7,7 @@ class EmployeeRepository {
   /// This function returns a list of employees.
   /// Note: We assume this is a real network api call
   Future<StatusResponse<List<Employee>>> getEmployees(
-      { bool? fakeError}) async {
+      { bool? fakeError = false}) async {
     try {
       var responseData = fakeError! ? Api.errorRexponse : Api.successResponse;
       if (responseData["statusCode"] == 200) {
