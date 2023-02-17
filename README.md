@@ -41,5 +41,6 @@ You have been assigned to build mobile system that primarily handles this for th
 - Run app
 
 
-## NOTE: This project is built on Flutter 3.7 with some breaking changes.
-## Make sure you are using the latest version of Flutter to build this project.
+## NOTE: 
+This project is built on Flutter 3.7 with some breaking changes.
+Make sure you are using the latest version of Flutter to build this project.
