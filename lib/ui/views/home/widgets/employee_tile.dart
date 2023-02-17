@@ -19,7 +19,6 @@ class EmployeeTile extends StatelessWidget {
           NameAvatar(firstName: employee.fullName, lastName: employee.fullName),
       title: Text(employee.fullName),
       subtitle: Text(employee.designation!),
-      trailing: Text("${employee.level}"),
     );
   }
 }
