@@ -68,7 +68,7 @@ void main() async {
           return employeeCubit;
         },
         act: (EmployeeCubit cubit) {
-          return cubit.syncEmployeesList(fakeError: true);
+          return cubit.fetchEmployees();
         },
         expect: () => [isA<Loading>(), isA<Error>()]);
   });

@@ -5,12 +5,14 @@ class AppTheme {
 
   static ThemeData lightTheme() {
     return ThemeData(
+      useMaterial3: true,
       colorScheme: lightColorScheme
     );
   }
 
   static ThemeData darkTheme() {
     return ThemeData(
+      useMaterial3: true,
       colorScheme: darkColorScheme
     );
   }
