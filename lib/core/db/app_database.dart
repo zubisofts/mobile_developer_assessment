@@ -17,15 +17,19 @@ class AppDatabase {
   }
 
   static Future _createDB(Database db, int version) async {
-   await db.execute("CREATE TABLE IF NOT EXISTS employees ("
-        "id integer NOT NULL PRIMARY KEY AUTOINCREMENT,"
-        "first_name varchar DEFAULT NULL,"
-        "last_name varchar DEFAULT NULL,"
-        "designation varchar DEFAULT NULL,"
-        "level integer DEFAULT 0,"
-        "productivity_score double DEFAULT 0,"
-        "current_salary varchar DEFAULT NULL,"
-        "employment_status integer DEFAULT NULL)");
+   await createTable(db);
+  }
+
+  static Future<void> createTable(Database db) async {
+     await db.execute("CREATE TABLE IF NOT EXISTS employees ("
+         "id integer NOT NULL PRIMARY KEY AUTOINCREMENT,"
+         "first_name varchar DEFAULT NULL,"
+         "last_name varchar DEFAULT NULL,"
+         "designation varchar DEFAULT NULL,"
+         "level integer DEFAULT 0,"
+         "productivity_score double DEFAULT 0,"
+         "current_salary varchar DEFAULT NULL,"
+         "employment_status integer DEFAULT NULL)");
   }
 
   static Future close() async {
