@@ -35,12 +35,11 @@ You have been assigned to build mobile system that primarily handles this for th
 - Simulate an error response from Api.errorResponse on the home page
 - A level 0 employee cannot be demoted, only terminated if need be.
 
-# Bonus:
-- Proper state management
-- Adaptive user interface
-- Widget tests
-- Declarative navigation
-- Reusability of elements
+# Running this project:
+- Clone this repository
+- Run pub get
+- Run app
 
 
-## Best of luck!
+## NOTE: This project is built on Flutter 3.7 with some breaking changes.
+## Make sure you are using the latest version of Flutter to build this project.
